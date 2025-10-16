@@ -1,10 +1,14 @@
-﻿namespace ProactiView.Models;
+﻿// C# ProactiView.Models/WebsiteStatus.cs
+using System;
 
-public class WebsiteStatus
+namespace ProactiView.Models
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Url { get; set; }
-    public bool IsOnline { get; set; }
-    public DateTime LastChecked { get; set; }
+    public class WebsiteStatus
+    {
+        public int Id { get; set; }
+        public string Status { get; set; } = default!; // e.g. "Up"/"Down"
+        public DateTime CheckedAt { get; set; }
+        public int WebsiteId { get; set; }
+        public Website? Website { get; set; }
+    }
 }

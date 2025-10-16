@@ -1,3 +1,8 @@
+// C# Infrastructure\Data\MetricsRepository.cs
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using ProactiView.Infrastructure.Data;
 using ProactiView.Interfaces;
 using ProactiView.Models;
