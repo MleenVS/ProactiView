@@ -32,8 +32,14 @@ namespace ProactiView.Services
             var list = (await GetMetricsForWebsiteAsync(websiteId, from, to)).ToList();
             if (!list.Any())
             {
-                return new MetricAggregateDto { WebsiteId = websiteId, Count = 0 };
+                return new MetricAggregateDto { WebsiteId = websiteId, Count = 0, Status = "Green" };
             }
+
+            var avg = list.Average(m => m.Value);
+            string status;
+            if (avg < 50) status = "Green";
+            else if (avg < 80) status = "Yellow";
+            else status = "Red";
 
             return new MetricAggregateDto
             {
@@ -43,7 +49,8 @@ namespace ProactiView.Services
                 Min = list.Min(m => m.Value),
                 Max = list.Max(m => m.Value),
                 FirstTimestamp = list.Min(m => m.Timestamp),
-                LastTimestamp = list.Max(m => m.Timestamp)
+                LastTimestamp = list.Max(m => m.Timestamp),
+                Status = status
             };
         }
     }

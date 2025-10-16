@@ -12,5 +12,7 @@ namespace ProactiView.Services.Dto
         public double Max { get; set; }
         public DateTime? FirstTimestamp { get; set; }
         public DateTime? LastTimestamp { get; set; }
+
+        public string Status { get; set; } = "Green";
     }
 }

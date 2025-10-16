@@ -1,0 +1,49 @@
+﻿@page
+@model ProactiView.Pages.DashboardModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1>Dashboard</h1>
+
+<style>
+    .status-light {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    .Green { background-color: green; }
+    .Yellow { background-color: yellow; }
+    .Red { background-color: red; }
+</style>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Website</th>
+        <th>Status</th>
+        <th>Count</th>
+        <th>Avg</th>
+        <th>Min</th>
+        <th>Max</th>
+        <th>First</th>
+        <th>Last</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var agg in Model.Aggregates)
+    {
+        <tr>
+            <td>@agg.WebsiteId</td>
+            <td><span class="status-light @agg.Status"></span></td>
+            <td>@agg.Count</td>
+            <td>@agg.Average</td>
+            <td>@agg.Min</td>
+            <td>@agg.Max</td>
+            <td>@agg.FirstTimestamp</td>
+            <td>@agg.LastTimestamp</td>
+        </tr>
+    }
+    </tbody>
+</table>
