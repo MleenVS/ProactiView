@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProactiView")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de48536505a9e2237a57b4c9710a54cf6b15a429")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08470ffde5649889cf21e59ea46932a6ca9ec9b5")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProactiView")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProactiView")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
