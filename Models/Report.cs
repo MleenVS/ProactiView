@@ -1,0 +1,9 @@
+public class Report
+{
+    public int Id { get; set; }
+    public string Title { get; set; } = string.Empty;
+    public string Content { get; set; } = string.Empty;
+    public DateTime Created { get; set; }
+    public int WebsiteId { get; set; }
+    public Website Website { get; set; } = null!;
+}
