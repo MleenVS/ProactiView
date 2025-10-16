@@ -195,3 +195,12 @@ C:\Applications\ProactiView\obj\Debug\net8.0\refint\ProactiView.dll
 C:\Applications\ProactiView\obj\Debug\net8.0\ProactiView.pdb
 C:\Applications\ProactiView\obj\Debug\net8.0\ProactiView.genruntimeconfig.cache
 C:\Applications\ProactiView\obj\Debug\net8.0\ref\ProactiView.dll
+C:\Applications\ProactiView\bin\Debug\net8.0\xunit.abstractions.dll
+C:\Applications\ProactiView\bin\Debug\net8.0\ProactiView.Tests\obj\ProactiView.Tests.csproj.nuget.dgspec.json
+C:\Applications\ProactiView\bin\Debug\net8.0\ProactiView.Tests\obj\project.assets.json
+C:\Applications\ProactiView\bin\Debug\net8.0\xunit.runner.visualstudio.testadapter.dll
+C:\Applications\ProactiView\bin\Debug\net8.0\Castle.Core.dll
+C:\Applications\ProactiView\bin\Debug\net8.0\Moq.dll
+C:\Applications\ProactiView\bin\Debug\net8.0\xunit.assert.dll
+C:\Applications\ProactiView\bin\Debug\net8.0\xunit.core.dll
+C:\Applications\ProactiView\bin\Debug\net8.0\xunit.execution.dotnet.dll

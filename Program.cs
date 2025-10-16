@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ProactiView.Infrastructure.Data;
 using ProactiView.Interfaces;
+using ProactiView.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<IWebsiteStatusRepository, WebsiteStatusRepository>();
 builder.Services.AddScoped<IMetricsRepository, MetricsRepository>();
+builder.Services.AddScoped<IReportsRepository, ReportsRepository>();
+builder.Services.AddScoped<IMetricsService, MetricsService>();
+builder.Services.AddScoped<IReportService, ReportService>();
 builder.Services.AddDbContext<ProactiViewDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 

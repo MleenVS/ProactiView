@@ -1,0 +1,78 @@
+
+@page
+@model DbCheckModel
+
+<h2>Database check</h2>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">
+        <strong>Error:</strong> @Model.ErrorMessage
+    </div>
+}
+else
+{
+    <div>
+        <p><strong>Metrics total:</strong> @Model.MetricCount</p>
+        <p><strong>WebsiteStatus total:</strong> @Model.WebsiteStatusCount</p>
+
+        <h3>Sample metrics</h3>
+        @if (Model.SampleMetrics.Any())
+        {
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Type</th>
+                        <th>Value</th>
+                        <th>Timestamp (UTC)</th>
+                        <th>WebsiteId</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var m in Model.SampleMetrics)
+                    {
+                        <tr>
+                            <td>@m.Id</td>
+                            <td>@m.Type</td>
+                            <td>@m.Value</td>
+                            <td>@m.Timestamp.ToString("u")</td>
+                            <td>@m.WebsiteId</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No sample metrics returned.</p>
+        }
+    </div>
+}
+
+<hr />
+<h3>Generate mock report</h3>
+<form method="post" asp-page-handler="Generate">
+    <div class="mb-2">
+        <label for="websiteId">Website Id</label>
+        <input type="number" id="websiteId" name="WebsiteIdInput" value="@Model.WebsiteIdInput" class="form-control" min="1" />
+    </div>
+    <div class="mb-2">
+        <label for="period">Period</label>
+        <select id="period" name="Period" class="form-select">
+            <option value="weekly" selected>Weekly</option>
+            <option value="monthly">Monthly</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Generate report</button>
+</form>
+
+@if (Model.GeneratedReport != null)
+{
+    <hr />
+    <h4>@Model.GeneratedReport.Title</h4>
+    <pre style="white-space:pre-wrap">@Model.GeneratedReport.Content</pre>
+    <p><em>Created: @Model.GeneratedReport.Created.ToString("u")</em></p>
+}
+
+<p><a href="/">Back to home</a></p>
